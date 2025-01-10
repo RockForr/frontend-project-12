@@ -1,21 +1,24 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
-import AddModalChannel from './AddModalChannel.jsx';
-import RemoveModalChannel from './RemoveModalChannel.jsx';
-import RenameModalChannel from './RenameModalChannel.jsx';
+import AddChannelModal from './modalComponents/AddChannelModal';
+import RemoveChannelModal from './modalComponents/RemoveChannelModal';
+import EditChannelModal from './modalComponents/EditChannelModal';
+import { selectType } from '../../store/slices/selectors.js';
+import ModalContainer from './modalComponents/ModalContainer.jsx';
 
-const modals = {
-  adding: AddModalChannel,
-  removing: RemoveModalChannel,
-  renaming: RenameModalChannel,
+const modalComponents = {
+  add: <AddChannelModal />,
+  edit: <EditChannelModal />,
+  remove: <RemoveChannelModal />,
 };
 
-const ShowModal = () => {
-  const type = useSelector((state) => state.modal.type);
+const Modal = () => {
+  const type = useSelector(selectType);
+  const body = modalComponents[type];
 
-  const ComponentModal = modals[type];
   return (
-    (ComponentModal === undefined ? null : <ComponentModal />)
+    body && <ModalContainer>{body}</ModalContainer>
   );
 };
 
-export default ShowModal;
+export default Modal;

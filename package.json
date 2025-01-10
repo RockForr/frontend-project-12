@@ -1,14 +1,22 @@
 {
-  "name": "@hexlet/code",
-  "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/RockForr/frontend-project-12/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/RockForr/frontend-project-12/actions)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "author": "Alexander",
   "dependencies": {
     "@hexlet/chat-server": "^2.0.4"
-  }
+  },
+  "description": "",
+  "homepage": "https://github.com/RockForr/frontend-project-12",
+  "license": "ISC",
+  "main": "src/index.js",
+  "name": "@hexlet/code",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RockForr/frontend-project-12.git"
+  },
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "start-server -s ./frontend/build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd frontend && npm ci"
+  },
+  "version": "1.0.0"
 }

@@ -1,40 +1,35 @@
-import React, { useContext } from 'react';
+import React, { memo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, Container, Navbar as BootstrapNavBar } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import { Button, Navbar, Container } from 'react-bootstrap';
-import { useNavigate, Outlet } from 'react-router-dom';
-import routes from '../routes.js';
-import { AuthContext } from '../contexts/AuthContext.jsx';
+import { removeAuthenticated } from '../store/slices/authenticatedSlice.js';
+import { selectIsAuth } from '../store/slices/selectors';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const { user, logout } = useContext(AuthContext);
+  const isAuth = useSelector(selectIsAuth);
+  const MemoButton = memo(Button);
 
-  const handleBtnClick = () => {
-    if (user) {
-      logout();
-    }
-    navigate(routes.login());
-  };
+  const handleLogout = useCallback(() => {
+    dispatch(removeAuthenticated());
+  }, [dispatch]);
 
   return (
-    <div className="d-flex flex-column h-100">
-      <Navbar className="shadow-sm navbar navbar-expand-lg navbar-light bg-white">
-        <Container>
-          <Navbar.Brand href={routes.home()} className="navbar-brand">
-            {t('nav.chat')}
-          </Navbar.Brand>
-          <Navbar.Collapse className="justify-content-end" />
-
-          {user ? (
-            <Button onClick={handleBtnClick}>{t('nav.exit')}</Button>
-          ) : (
-            null
-          )}
-        </Container>
-      </Navbar>
-      <Outlet />
-    </div>
+    <BootstrapNavBar
+      expand="lg"
+      bg="white"
+      variant="light"
+      className="shadow-sm"
+    >
+      <Container>
+        <BootstrapNavBar.Brand href="/">
+          {t('navBar.title')}
+        </BootstrapNavBar.Brand>
+        {(isAuth && <MemoButton onClick={handleLogout}>{t('navBar.button')}</MemoButton>)}
+      </Container>
+    </BootstrapNavBar>
   );
 };
+
 export default NavBar;

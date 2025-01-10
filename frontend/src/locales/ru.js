@@ -1,80 +1,95 @@
-
 export default {
-    translation: {
-      nav: {
-        chat: 'Hexlet Chat',
-        exit: 'Выйти',
-        login: 'Войти',
-      },
-      authForm: {
-        logIn: 'Войти',
-        name: 'Ваш ник',
+  translation: {
+    navBar: {
+      title: 'Hexlet Chat',
+      button: 'Выйти',
+    },
+    loginPage: {
+      title: 'Войти',
+      form: {
+        username: 'Ваш ник',
         password: 'Пароль',
-        buttonLogIn: 'Войти',
-        noAcc: 'Нет аккаунта?',
-        signUp: 'Регистрация',
-        validForm: {
-          notExist: 'Неверные имя пользователя или пароль',
-          required: 'Заполните это поле',
-        },
       },
-      signUp: {
-        registration: 'Регистрация',
+      button: 'Войти',
+      footer: {
+        text: 'Нет аккаунта? ',
+        signUpLink: 'Регистрация',
+      },
+    },
+    errorPage: {
+      title: 'Страница не найдена',
+      alt: 'Страница не найдена',
+      body: {
+        text: 'Но вы можете перейти ',
+        link: 'на главную страницу',
+      },
+    },
+    signUpPage: {
+      title: 'Регистрация',
+      form: {
         username: 'Имя пользователя',
         password: 'Пароль',
         confirmPassword: 'Подтвердите пароль',
-        buttonRegister: 'Зарегистрироваться',
-        validSignUp: {
-          required: 'Заполните это поле',
-          usernameMinMax: 'От 3 до 20 символов',
-          passwordMin: 'Не менее 6 символов',
-          confirmPassword: 'Пароли должны совпадать',
-          alreadyExists: 'Такой пользователь уже существует',
-        },
       },
-      modal: {
-        channels: 'Каналы',
-        channelControl: 'Управление каналом',
-        addModalChannel: 'Добавить канал',
-        removeModalChannel: 'Удалить канал',
-        removeChannel: 'Удалить',
-        renameModalChannel: 'Переименовать канал',
-        renameChannel: 'Переименовать',
-        validChannel: {
-          required: 'Обязательное поле',
-          nameMinMax: 'От 3 до 20 символов',
-          uniq: 'Должно быть уникальным',
-          obsceneLexicon: 'Ненормативная лексика',
-        },
-        nameChannel: 'Имя канала',
-        buttonCancel: 'Отменить',
-        buttonCreate: 'Отправить',
-        areYouSure: 'Уверены?',
-        delete: 'Удалить',
+      button: 'Зарегистрироваться',
+    },
+    channelsContainer: {
+      title: 'Каналы',
+      prefix: '#',
+    },
+    messagesContainer: {
+      messageCount: {
+        message_one: '{{count}} сообщение',
+        message_few: '{{count}} сообщения',
+        message_many: '{{count}} сообщений',
       },
-      messages: {
-        counter: {
-          count_one: '{{count}} сообщение',
-          count_few: '{{count}} сообщения',
-          count_many: '{{count}} сообщений',
-        },
-        newMessage: 'Новое сообщение',
-        messagePlaceholder: 'Введите сообщение...',
-        enterMessage: 'Оправить',
-      },
-      toasts: {
-        createChannel: 'Канал создан',
-        renameChanel: 'Канал переименован',
-        removeChannel: 'Канал удалён',
-        connectError: 'Ошибка соединения',
-        uknownError: 'Неизвестная ошибка',
-      },
-  
-      pageNotFound: {
-        notFound: 'Страница не найдена',
-        clickTheLink: 'Но вы можете перейти',
-        goToHomePage: 'На главную страницу',
+      button: 'Отправить',
+      form: {
+        placeholder: 'Введите сообщение...',
+        label: 'Новое сообщение',
       },
     },
-  };
-  
+    toast: {
+      channel: {
+        add: 'Канал создан',
+        edit: 'Канал переименован',
+        remove: 'Канал удалён',
+      },
+      errors: {
+        add: 'При создании канала произошла ошибка',
+        edit: 'При переименовании канала произошла ошибка',
+        remove: 'При удалении канала произошла ошибка',
+      },
+    },
+    schema: {
+      username: 'От 3 до 20 символов',
+      required: 'обязательное поле',
+      password: 'Не менее 6 символов',
+      confirmPassword: 'Пароли должны совпадать',
+    },
+    modal: {
+      addChannel: {
+        title: 'Добавить канал',
+        label: 'Имя канала',
+      },
+      editChannel: {
+        title: 'Переименовать канал',
+        label: 'Имя канала',
+      },
+      removeChannel: {
+        title: 'Удалить канал',
+        body: 'Уверены?',
+      },
+      buttons: {
+        close: 'Отменить',
+        submit: 'Отправить',
+        remove: 'Удалить',
+      },
+      error: 'Должно быть уникальным',
+    },
+    errors: {
+      401: 'Неверные имя пользователя или пароль',
+      409: 'Такой пользователь уже существует',
+    },
+  },
+};
