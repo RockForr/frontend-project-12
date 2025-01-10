@@ -11,7 +11,7 @@ const runApp = async () => {
   const app = await initApp(socket);
 
   const chat = ReactDOM.createRoot(document.getElementById('chat'));
-  chat.render('<React.StrictMode>{app}</React.StrictMode>');
+  chat.render(<React.StrictMode>{app}</React.StrictMode>);
 };
 
 runApp();

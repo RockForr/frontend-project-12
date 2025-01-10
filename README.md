@@ -1,4 +1,4 @@
-# Welkome to the "Чат (Slack)"
+# Welkome to the "Chat (Slack)"
 
 [Try it on PaaS](https://frontend-project-12-0cun.onrender.com)
 
