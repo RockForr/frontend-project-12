@@ -1,6 +1,6 @@
 import { messageApi } from '../store/API/messagesAPI.js';
 import { channelApi } from '../store/API/channelsAPI.js';
-import { setDefaultChannel } from '../store/slices/uiSlice.js';
+import { setDefaultChannel } from '../store/slices/channelSlice.js';
 
 const webSocketInit = (socket, store) => {
   socket

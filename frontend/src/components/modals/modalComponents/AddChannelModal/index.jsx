@@ -9,7 +9,7 @@ import { Form, Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { useAddChannelMutation, useGetChannelsQuery } from '../../../../store/API/channelsAPI.js';
 import { closeModal } from '../../../../store/slices/modalSlice.js';
-import { setActiveChannel } from '../../../../store/slices/uiSlice.js';
+import { setActiveChannel } from '../../../../store/slices/channelSlice.js';
 import badWordsDictionary from '../../../../utils/badWordsDictionary.js';
 import channelNameSchema from './schema.js';
 

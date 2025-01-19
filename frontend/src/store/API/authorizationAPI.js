@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import axios from 'axios';
-import path from '../../utils/routes';
+import path from '../../nav/routes';
 
 const axiosBaseQuery = ({ baseUrl }) => async ({ url, method, data }) => {
   try {
@@ -24,19 +24,19 @@ const axiosBaseQuery = ({ baseUrl }) => async ({ url, method, data }) => {
 export const authorizationAPI = createApi({
   reducerPath: 'authorizationAPI',
   baseQuery: axiosBaseQuery({
-    baseUrl: path.api.base(),
+    baseUrl: path.api.base,
   }),
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (userData) => ({
-        url: path.api.login(),
+        url: path.api.login,
         method: 'post',
         data: userData,
       }),
     }),
     signup: builder.mutation({
       query: (userData) => ({
-        url: path.api.signup(),
+        url: path.api.signup,
         method: 'post',
         data: userData,
       }),

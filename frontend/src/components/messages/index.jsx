@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Col } from 'react-bootstrap';
 import Message from './message.jsx';
 import Form from './form.jsx';
-import { selectChannelID, selectChannelName } from '../../store/slices/selectors';
+import { selectChannelID, selectChannelName } from '../selectors.js';
 
 const Index = ({ messages }) => {
   const activeChannelId = useSelector(selectChannelID);

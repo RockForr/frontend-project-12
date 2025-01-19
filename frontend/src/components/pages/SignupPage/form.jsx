@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import { Form } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import path from '../../utils/routes.js';
-import { useSignupMutation } from '../../store/API/authorizationAPI';
-import { setAuthenticated } from '../../store/slices/authenticatedSlice';
-import FormButton from '../../components/FormButton';
+import path from '../../../nav/routes.js';
+import { useSignupMutation } from '../../../store/API/authorizationAPI';
+import { setAuthenticated } from '../../../store/slices/authenticatedSlice';
+import FormButton from '../../FormButton';
 import signupSchema from './schema.js';
 
 const SignupForm = () => {
@@ -26,7 +26,7 @@ const SignupForm = () => {
     try {
       const data = await signup(values).unwrap();
       dispatch(setAuthenticated(data));
-      navigate(path.pages.root());
+      navigate(path.pages.root);
     } catch (e) {
       setErrors({ username: ' ', password: ' ', confirmPassword: t(`errors.${e.status}`) });
     }

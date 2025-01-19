@@ -6,8 +6,8 @@ const initialState = {
   activeChannelName: 'general',
 };
 
-const uiSlice = createSlice({
-  name: 'ui',
+const channelSlice = createSlice({
+  name: 'channel',
   initialState,
   reducers: {
     setActiveChannel(state, { payload }) {
@@ -21,5 +21,5 @@ const uiSlice = createSlice({
   },
 });
 
-export const { setActiveChannel, setDefaultChannel } = uiSlice.actions;
-export default uiSlice.reducer;
+export const { setActiveChannel, setDefaultChannel } = channelSlice.actions;
+export default channelSlice.reducer;

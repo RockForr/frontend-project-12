@@ -5,8 +5,8 @@ import { Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { useRemoveChannelMutation } from '../../../store/API/channelsAPI.js';
 import { closeModal } from '../../../store/slices/modalSlice';
-import { setDefaultChannel } from '../../../store/slices/uiSlice';
-import { selectID, selectChannelID } from '../../../store/slices/selectors';
+import { setDefaultChannel } from '../../../store/slices/channelSlice.js';
+import { selectID, selectChannelID } from '../../selectors';
 
 const RemoveChannelModal = () => {
   const dispatch = useDispatch();

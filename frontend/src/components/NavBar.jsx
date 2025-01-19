@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container, Navbar as BootstrapNavBar } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { removeAuthenticated } from '../store/slices/authenticatedSlice.js';
-import { selectIsAuth } from '../store/slices/selectors';
+import { selectIsAuth } from './selectors';
 
 const NavBar = () => {
   const dispatch = useDispatch();

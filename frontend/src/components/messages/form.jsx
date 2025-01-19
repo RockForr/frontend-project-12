@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import { Formik } from 'formik';
 import { useAddMessageMutation } from '../../store/API/messagesAPI.js';
-import { selectUser, selectChannelID } from '../../store/slices/selectors';
+import { selectUser, selectChannelID } from '../selectors.js';
 import { ReactComponent as IconSendButton } from '../../assets/svg/sandMessageButton_Icon.svg';
 import badWordsDictionary from '../../utils/badWordsDictionary.js';
 import messageSchema from './schema';
@@ -71,7 +71,7 @@ const MessageForm = () => {
                 disabled={!isValid || !dirty || isAddingMessage}
               >
                 <IconSendButton />
-                <span className="visually-hidden">Отправить</span>
+                <span className="visually-hidden">{t('messagesContainer.button')}</span>
               </Button>
             </InputGroup>
           </Form>

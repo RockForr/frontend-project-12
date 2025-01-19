@@ -6,6 +6,7 @@ export default {
     },
     loginPage: {
       title: 'Войти',
+      srcAlt: 'Войти',
       form: {
         username: 'Ваш ник',
         password: 'Пароль',
@@ -26,6 +27,7 @@ export default {
     },
     signUpPage: {
       title: 'Регистрация',
+      srcAlt: 'Регистрация',
       form: {
         username: 'Имя пользователя',
         password: 'Пароль',
@@ -36,6 +38,9 @@ export default {
     channelsContainer: {
       title: 'Каналы',
       prefix: '#',
+      remove: 'Удалить',
+      rename: 'Переименовать',
+      control: 'Управление каналом',
     },
     messagesContainer: {
       messageCount: {

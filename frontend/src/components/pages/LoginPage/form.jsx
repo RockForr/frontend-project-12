@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Form } from 'react-bootstrap';
 import { Formik } from 'formik';
-import path from '../../utils/routes.js';
-import { useLoginMutation } from '../../store/API/authorizationAPI';
-import { setAuthenticated } from '../../store/slices/authenticatedSlice';
-import FormButton from '../../components/FormButton';
+import path from '../../../nav/routes.js';
+import { useLoginMutation } from '../../../store/API/authorizationAPI';
+import { setAuthenticated } from '../../../store/slices/authenticatedSlice';
+import FormButton from '../../FormButton';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const LoginForm = () => {
     try {
       const data = await login(values).unwrap();
       dispatch(setAuthenticated(data));
-      navigate(path.pages.root());
+      navigate(path.pages.root);
     } catch (e) {
       setErrors({ form: t(`errors.${e.status}`) });
     }

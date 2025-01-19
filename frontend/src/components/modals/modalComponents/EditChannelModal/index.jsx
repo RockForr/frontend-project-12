@@ -5,10 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import { Formik } from 'formik';
 import { useEditChannelMutation, useGetChannelsQuery } from '../../../../store/API/channelsAPI';
-import { setActiveChannel } from '../../../../store/slices/uiSlice.js';
+import { setActiveChannel } from '../../../../store/slices/channelSlice.js';
 import { closeModal } from '../../../../store/slices/modalSlice';
 import badWordsDictionary from '../../../../utils/badWordsDictionary';
-import { selectID, selectName, selectChannelID } from '../../../../store/slices/selectors';
+import { selectID, selectName, selectChannelID } from '../../../selectors';
 import channelNameSchema from './schema.js';
 
 const EditChannelModal = () => {

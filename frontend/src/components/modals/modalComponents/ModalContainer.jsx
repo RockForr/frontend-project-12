@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'react-bootstrap';
-import { selectIsShown, selectType } from '../../../store/slices/selectors.js';
+import { selectIsShown, selectType } from '../../selectors.js';
 import { closeModal } from '../../../store/slices/modalSlice.js';
 
 const ModalContainer = ({ children }) => {

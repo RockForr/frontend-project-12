@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authenticatedReducer from './slices/authenticatedSlice.js';
-import uiReducer from './slices/uiSlice.js';
+import uiReducer from './slices/channelSlice.js';
 import modalReducer from './slices/modalSlice.js';
 import { channelApi } from './API/channelsAPI.js';
 import { messageApi } from './API/messagesAPI.js';

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import AddChannelModal from './modalComponents/AddChannelModal';
 import RemoveChannelModal from './modalComponents/RemoveChannelModal';
 import EditChannelModal from './modalComponents/EditChannelModal';
-import { selectType } from '../../store/slices/selectors.js';
+import { selectType } from '../selectors.js';
 import ModalContainer from './modalComponents/ModalContainer.jsx';
 
 const modalComponents = {
